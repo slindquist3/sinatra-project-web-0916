@@ -1,5 +1,5 @@
 
-<form action="/restaurants/<%=@restaurant.id%>/edit" method="POST">
+<form action="/restaurants/<%=@restaurant.id%>" method="POST">
   <input id = "hidden" type="hidden" name="_method" value="patch">
 
   <label>Name</label><input type="TEXT" name="name" value="<%=@restaurant.name%>">

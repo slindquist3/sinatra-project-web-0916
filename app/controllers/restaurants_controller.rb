@@ -33,7 +33,13 @@ class RestaurantsController < ApplicationController
     @restaurant.rating = params[:rating]
     @restaurant.address = params[:address]
     @restaurant.save
-    redirect to "/restaurants/#{restaurant.id}"
+    redirect to "/restaurants/#{@restaurant.id}"
+  end
+
+  delete '/restaurants/:id/delete' do
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.delete
+    redirect to "/restaurants"
   end
 
 
